@@ -1,57 +1,34 @@
-# 🔐 DocCrack
+# DocCrack
 
-**Professional all-in-one document security tool** for password protection and recovery.
+Document security tool for password protection and recovery of PDF, Word, Excel, and PowerPoint files.
 
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-blue)]()
-[![Python](https://img.shields.io/badge/python-3.7+-green)]()
-[![License](https://img.shields.io/badge/license-MIT-orange)]()
+## Features
 
-## ✨ Features
+**Protection**
+- Add passwords to documents (PDF, Word, Excel, PowerPoint)
+- AES-256 encryption for PDFs
+- Originals never modified
 
-### 🔒 Document Protection
-- Password-protect PDF, Word, Excel, PowerPoint files
-- AES-256 encryption (industry standard)
-- Original files never modified
-- Creates secure `_protected` versions
+**Recovery**
+- Common password checking
+- Dictionary attacks
+- Brute force (configurable)
+- GUI with real-time progress
 
-### 🔓 Password Recovery
-- **Common Passwords**: Test popular passwords (~40 common ones)
-- **Dictionary Attack**: Use custom wordlist files
-- **Brute Force**: Try all combinations (configurable length)
-- Real-time progress monitoring
-- Stop/resume capability
+## Installation
 
-### 🎨 Professional GUI
-- Modern, intuitive interface
-- Cross-platform (Windows, Linux, macOS)
-- Real-time activity logging
-- Color-coded actions
-- No command-line required!
-
-## 📸 Screenshots
-
-![DocCrack GUI](docs/screenshot.png)
-
-## 🚀 Quick Start
+```bash
+git clone https://github.com/darkbert781/DocCrack.git
+cd DocCrack
+pip install -r requirements.txt
+python doc_security_tool.py
+```
 
 ### Windows
-```cmd
-# One-time setup
-setup_windows.bat
+Run `setup_windows.bat` then `run_windows.bat`
 
-# Launch the tool
-run_windows.bat
-```
-
-### Linux
-```bash
-# Use pre-compiled executable
-./launch.sh
-
-# Or run from source
-pip3 install -r requirements.txt
-python3 doc_security_tool.py
-```
+### Linux  
+Pre-compiled executable included: `./launch.sh`
 
 ### macOS
 ```bash
@@ -59,144 +36,57 @@ pip3 install -r requirements.txt
 python3 doc_security_tool.py
 ```
 
-## 📦 Installation
+## Usage
 
-### Download
-**[⬇️ Download Latest Release](https://github.com/yourusername/DocCrack/releases)**
+**Protect a document:**
+1. Select "Protect Document" mode
+2. Choose file
+3. Enter password
+4. Click Protect
 
-Or clone:
-```bash
-git clone https://github.com/yourusername/DocCrack.git
-cd DocCrack
-```
+**Crack a password:**
+1. Select "Crack Password" mode
+2. Choose protected file
+3. Pick attack method (Common/Dictionary/Brute Force)
+4. Click Crack
 
-### Install Dependencies
-```bash
-pip install -r requirements.txt
-```
+## Supported Formats
 
-### Run
-```bash
-python doc_security_tool.py
-```
+- PDF (.pdf)
+- Word (.docx)
+- Excel (.xlsx)
+- PowerPoint (.pptx)
 
-## 🎯 Supported Formats
+## Performance
 
-| Format | Extension | Protection | Recovery |
-|--------|-----------|-----------|----------|
-| PDF | `.pdf` | ✅ | ✅ |
-| Word | `.docx` | ✅ | ✅ |
-| Excel | `.xlsx` | ✅ | ✅ |
-| PowerPoint | `.pptx` | ✅ | ✅ |
+- Common passwords: ~1000/sec
+- Dictionary: depends on wordlist
+- Brute force (4 chars): ~1 min
+- Brute force (5 chars): ~30 min
 
-## 💡 Usage Examples
+## Building
 
-### Protect a Document
-1. Select **"Protect Document"** mode
-2. Browse for your file
-3. Enter password (twice)
-4. Click **"🔒 Protect Document"**
-5. Done! Protected file saved with `_protected` suffix
+Create standalone executable:
 
-### Recover a Password
-1. Select **"Crack Password"** mode
-2. Browse for protected document
-3. Choose attack method:
-   - **Common Passwords** (fastest)
-   - **Dictionary** (needs wordlist)
-   - **Brute Force** (for short passwords)
-4. Click **"🔓 Crack Password"**
-5. Password displayed when found!
+**Windows:** `compile_windows.bat`  
+**Linux:** `pyinstaller --onefile --name DocCrack doc_security_tool.py`
 
-## 📊 Performance
+## Legal Notice
 
-| Attack Method | Speed | Best For |
-|--------------|-------|----------|
-| Common Passwords | ~1000/sec | Quick test |
-| Dictionary | Variable | Known patterns |
-| Brute Force (4 chars) | ~1 minute | Very short |
-| Brute Force (5 chars) | ~30 minutes | Short |
-
-## 🛠️ Development
-
-### Build from Source
-```bash
-# Clone repository
-git clone https://github.com/yourusername/DocCrack.git
-cd DocCrack
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run
-python doc_security_tool.py
-```
-
-### Create Executable
-**Windows:**
-```cmd
-compile_windows.bat
-```
-
-**Linux:**
-```bash
-pyinstaller --onefile --name "DocCrack" doc_security_tool.py
-```
-
-## 🔒 Security & Legal
-
-### ⚠️ Legal Use Only
 This tool is for:
-- ✅ Recovering YOUR OWN forgotten passwords
-- ✅ Authorized security testing
-- ✅ Educational purposes
-- ✅ Penetration testing with permission
+- Recovering your own forgotten passwords
+- Authorized security testing
+- Educational purposes
 
-### ❌ DO NOT:
-- Attempt to crack passwords on documents you don't own
-- Use on copyrighted/proprietary materials without authorization
-- Violate computer fraud or privacy laws
+Do not use on documents you don't own or without permission.
 
-**You are responsible for legal compliance!**
+## Requirements
 
-## 📝 Requirements
+- Python 3.7+
+- pikepdf
+- msoffcrypto-tool
+- PyPDF2
 
-- Python 3.7 or higher
-- tkinter (usually included with Python)
-- See `requirements.txt` for Python packages
+## License
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **pikepdf** - PDF encryption/decryption
-- **msoffcrypto-tool** - Office document handling
-- **PyPDF2** - PDF support
-
-## 📧 Support
-
-- 📖 [Full Documentation](docs/)
-- 🐛 [Report Issues](https://github.com/yourusername/DocCrack/issues)
-- 💬 [Discussions](https://github.com/yourusername/DocCrack/discussions)
-
-## ⭐ Star History
-
-If you find this tool useful, please consider giving it a star!
-
----
-
-**Made with ❤️ for document security**
-
-*Educational and legitimate security research purposes only*
+MIT License - see LICENSE file
