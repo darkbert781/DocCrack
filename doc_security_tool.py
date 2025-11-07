@@ -3,6 +3,8 @@
 Document Security Tool - All-in-One Protection & Password Recovery
 Supports Word, PDF, Excel, PowerPoint and more
 Cross-platform: Windows, Linux, macOS
+
+Author: ALinaswe Simfukwe
 """
 
 import tkinter as tk

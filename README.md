@@ -87,6 +87,10 @@ Do not use on documents you don't own or without permission.
 - msoffcrypto-tool
 - PyPDF2
 
+## Author
+
+Created by **ALinaswe Simfukwe**
+
 ## License
 
 MIT License - see LICENSE file
